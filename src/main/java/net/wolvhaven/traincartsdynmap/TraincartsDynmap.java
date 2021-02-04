@@ -4,19 +4,17 @@ import com.bergerkiller.bukkit.tc.controller.MinecartGroup;
 import com.bergerkiller.bukkit.tc.controller.MinecartGroupStore;
 import com.bergerkiller.bukkit.tc.controller.MinecartMember;
 import org.bukkit.block.Block;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.dynmap.DynmapCommonAPI;
 import org.dynmap.markers.CircleMarker;
 import org.dynmap.markers.MarkerAPI;
 import org.dynmap.markers.MarkerSet;
 
-public final class TraincartsDynmap extends JavaPlugin implements Listener {
+public final class TraincartsDynmap extends JavaPlugin {
 
   @Override
   public void onEnable() {
     // Plugin startup logic
-    this.getServer().getPluginManager().registerEvents(this, this);
 
     this.getServer().getScheduler().runTaskTimer(this, () -> {
       MarkerAPI markerAPI = ((DynmapCommonAPI) TraincartsDynmap.getProvidingPlugin(DynmapCommonAPI.class)).getMarkerAPI();
